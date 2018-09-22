@@ -28,7 +28,7 @@ describe('calculateNumbers will calculate the numbers that are passed into it', 
   test('calculateNumbers will subtract the two numbers passed into it and return the total', () => {
     expect(calculateNumbers(sub.sub1, sub.sub2, sub.op)).toEqual(4)
   })
-  test('calculateNumbers will subtract the two numbers passed into it and return a negative total', () => {
+  test('calculateNumbers will subtract the two numbers passed into it where the second number is larger than the first and return a negative total', () => {
     expect(calculateNumbers(sub.sub2, sub.sub3, sub.op)).toEqual(-6)
   })
   test('calculateNumbers will multiply the two numbers passed into it and return the total', () => {

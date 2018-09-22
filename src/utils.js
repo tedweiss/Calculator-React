@@ -9,6 +9,9 @@ export const calculateNumbers = (num1, num2, op) => {
     // multiplication
   } else if (op === '*') {
     total = num1 * num2
+    // division
+  } else if (op === '/') {
+    total = num1 / num2
   }
   return total
 }

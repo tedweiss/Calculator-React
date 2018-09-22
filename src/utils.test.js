@@ -18,12 +18,18 @@ const testNumbers = {
     mult2: 4,
     mult3: -5,
     mult4: -3
+  },
+  divide: {
+    op: '/',
+    divide1: 8,
+    divide2: 2
   }
 }
 describe('calculateNumbers will calculate the numbers that are passed into it', () => {
   let add = testNumbers.add
   let sub = testNumbers.sub
   let mult = testNumbers.mult
+  let divide = testNumbers.divide
   test('calculateNumbers will add the two numbers passed into it and return the total', () => {
     expect(calculateNumbers(add.add1, add.add2, add.op)).toEqual(3)
   })
@@ -41,5 +47,9 @@ describe('calculateNumbers will calculate the numbers that are passed into it', 
   })
   test('calculateNumbers will multiply the two numbers passed into it where both are nevagite and return a positive total', () => {
     expect(calculateNumbers(mult.mult3, mult.mult4, mult.op)).toEqual(15)
+  })
+  test('calculateNumbers will divide the two numbers passed into it and return the total', () => {
+    console.log('divide.op: ', divide.op)
+    expect(calculateNumbers(divide.divide1, divide.divide2, divide.op)).toEqual(4)
   })
 })

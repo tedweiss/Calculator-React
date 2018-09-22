@@ -22,7 +22,8 @@ const testNumbers = {
   divide: {
     op: '/',
     divide1: 8,
-    divide2: 2
+    divide2: 2,
+    divide3: 1
   }
 }
 describe('calculateNumbers will calculate the numbers that are passed into it', () => {
@@ -49,7 +50,9 @@ describe('calculateNumbers will calculate the numbers that are passed into it', 
     expect(calculateNumbers(mult.mult3, mult.mult4, mult.op)).toEqual(15)
   })
   test('calculateNumbers will divide the two numbers passed into it and return the total', () => {
-    console.log('divide.op: ', divide.op)
     expect(calculateNumbers(divide.divide1, divide.divide2, divide.op)).toEqual(4)
+  })
+  test('calculateNumbers will divide the two numbers passed into it and return a decimal', () => {
+    expect(calculateNumbers(divide.divide3, divide.divide2, divide.op)).toEqual(0.5)
   })
 })

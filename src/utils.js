@@ -6,6 +6,9 @@ export const calculateNumbers = (num1, num2, op) => {
     // subtration
   } else if (op === '-') {
     total = num1 - num2
+    // multiplication
+  } else if (op === '*') {
+    total = num1 * num2
   }
   return total
 }

@@ -15,7 +15,8 @@ const testNumbers = {
   mult: {
     op: '*',
     mult1: 2,
-    mult2: 4
+    mult2: 4,
+    mult3: -5
   }
 }
 describe('calculateNumbers will calculate the numbers that are passed into it', () => {
@@ -33,5 +34,8 @@ describe('calculateNumbers will calculate the numbers that are passed into it', 
   })
   test('calculateNumbers will multiply the two numbers passed into it and return the total', () => {
     expect(calculateNumbers(mult.mult1, mult.mult2, mult.op)).toEqual(8)
+  })
+  test('calculateNumbers will multiply the two numbers passed into it where one is nevagite and return a negative total', () => {
+    expect(calculateNumbers(mult.mult3, mult.mult2, mult.op)).toEqual(-20)
   })
 })

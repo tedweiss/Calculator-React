@@ -60,3 +60,36 @@ export const digits = [
     position: 0
   }
 ]
+
+export const operators = [
+  {
+    id: 0,
+    name: 'addition',
+    value: '+',
+    position: 1
+  },
+  {
+    id: 1,
+    name: 'subtraction',
+    value: '-',
+    position: 2
+  },
+  {
+    id: 2,
+    name: 'multiplication',
+    value: '*',
+    position: 3
+  },
+  {
+    id: 3,
+    name: 'division',
+    value: '/',
+    position: 4
+  },
+  {
+    id: 4,
+    name: 'equal',
+    value: '=',
+    position: 5
+  }
+]

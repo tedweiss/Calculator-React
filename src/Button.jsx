@@ -1,8 +1,16 @@
 import React from 'react'
 
 const Button = props => {
-  const { id, name } = props
-  return <div id={id}>{name}</div>
+  const { id, name, onClick, value } = props
+  return (
+    <div
+      id={id}
+      onClick={() => {
+        onClick(value)
+      }}>
+      {name}
+    </div>
+  )
 }
 
 export default Button

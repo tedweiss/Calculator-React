@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import Button from './Button'
 import { digits, operators } from './data'
+import { calculateNumbers } from './utils'
 
 export default class Calculator extends Component {
   constructor () {
@@ -31,9 +32,15 @@ export default class Calculator extends Component {
     }
     this.updateState(name, number)
   }
-  handleOpClick = op => {
-    // update state of the the operator
-    this.updateState('op', op)
+  handleOpClick = opClick => {
+    const { num1, num2, op } = this.state
+    if (opClick === '=') {
+      let total = calculateNumbers(parseFloat(num1), parseFloat(num2), op)
+      this.setState({ total, op: opClick })
+    } else {
+      // update state of the the operator
+      this.updateState('op', opClick)
+    }
   }
   render () {
     return (

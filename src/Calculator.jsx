@@ -31,6 +31,10 @@ export default class Calculator extends Component {
     }
     this.updateState(name, number)
   }
+  handleOpClick = op => {
+    // update state of the the operator
+    this.updateState('op', op)
+  }
   render () {
     return (
       <div className='Calculator'>
@@ -44,7 +48,15 @@ export default class Calculator extends Component {
         </div>
         <div className='operators'>
           {operators.map((operator, idx) => {
-            return <Button key={idx} id={operator.id} name={operator.value} value={operator.value} />
+            return (
+              <Button
+                key={idx}
+                id={operator.id}
+                name={operator.value}
+                onClick={this.handleOpClick}
+                value={operator.value}
+              />
+            )
           })}
         </div>
       </div>

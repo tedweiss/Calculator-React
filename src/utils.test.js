@@ -27,7 +27,8 @@ const testNumbers = {
   }
 }
 const testDisplayNumbers = {
-  num1: '1'
+  num1: '1',
+  num2: '2'
 }
 describe('calculateNumbers will calculate the numbers that are passed into it', () => {
   let add = testNumbers.add
@@ -63,5 +64,8 @@ describe('calculateNumbers will calculate the numbers that are passed into it', 
 describe('displayNumbers will return the correct number that is passed into it', () => {
   test('displayNumbers will return the first number passed in', () => {
     expect(displayNumbers(testDisplayNumbers.num1, '', 0)).toEqual('1')
+  })
+  test('displayNumbers will return the second number passed in', () => {
+    expect(displayNumbers(testDisplayNumbers.num1, testDisplayNumbers.num2, 0)).toEqual('2')
   })
 })

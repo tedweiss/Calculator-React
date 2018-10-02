@@ -8,7 +8,7 @@ export default class Calculator extends Component {
   constructor () {
     super()
     this.state = {
-      num1: '',
+      num1: '0',
       num2: '',
       total: 0,
       op: ''
@@ -36,16 +36,26 @@ export default class Calculator extends Component {
     const { num1, num2, op } = this.state
     if (opClick === '=') {
       let total = calculateNumbers(parseFloat(num1), parseFloat(num2), op)
-      this.setState({ total, op: opClick })
+      this.setState({ num1: '', num2: '', total, op: opClick })
     } else {
       // update state of the the operator
       this.updateState('op', opClick)
     }
   }
+  displayNumbers = () => {
+    const { num1, num2, total } = this.state
+    if (num2) {
+      return num2
+    } else if (num1) {
+      return num1
+    } else {
+      return total
+    }
+  }
   render () {
     return (
       <div className='Calculator'>
-        <div>{this.state.num1}</div>
+        <div>{this.displayNumbers()}</div>
         <div className='digits'>
           {digits.map((digit, idx) => {
             return (

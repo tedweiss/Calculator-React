@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Button from './Button'
 import { digits, operators } from './data'
-import { calculateNumbers } from './utils'
+import { calculateNumbers, displayNumbers } from './utils'
 
 export default class Calculator extends Component {
   constructor () {
@@ -42,20 +42,11 @@ export default class Calculator extends Component {
       this.updateState('op', opClick)
     }
   }
-  displayNumbers = () => {
-    const { num1, num2, total } = this.state
-    if (num2) {
-      return num2
-    } else if (num1) {
-      return num1
-    } else {
-      return total
-    }
-  }
   render () {
+    const { num1, num2, total } = this.state
     return (
       <div className='Calculator'>
-        <div>{this.displayNumbers()}</div>
+        <div>{displayNumbers(num1, num2, total)}</div>
         <div className='digits'>
           {digits.map((digit, idx) => {
             return (

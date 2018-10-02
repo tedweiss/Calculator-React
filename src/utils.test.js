@@ -1,4 +1,4 @@
-import { calculateNumbers } from '../src/utils'
+import { calculateNumbers, displayNumbers } from '../src/utils'
 
 const testNumbers = {
   add: {
@@ -25,6 +25,9 @@ const testNumbers = {
     divide2: 2,
     divide3: 1
   }
+}
+const testDisplayNumbers = {
+  num1: 1
 }
 describe('calculateNumbers will calculate the numbers that are passed into it', () => {
   let add = testNumbers.add
@@ -54,5 +57,11 @@ describe('calculateNumbers will calculate the numbers that are passed into it', 
   })
   test('calculateNumbers will divide the two numbers passed into it and return a decimal', () => {
     expect(calculateNumbers(divide.divide3, divide.divide2, divide.op)).toEqual(0.5)
+  })
+})
+
+describe('displayNumbers will return the correct number that is passed into it', () => {
+  test('displayNumbers will return the first number passed in', () => {
+    expect(displayNumbers(testDisplayNumbers.num1, '', 0)).toEqual(1)
   })
 })

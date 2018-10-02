@@ -8,7 +8,7 @@ export default class Calculator extends Component {
   constructor () {
     super()
     this.state = {
-      num1: '0',
+      num1: 0,
       num2: '',
       total: 0,
       op: ''

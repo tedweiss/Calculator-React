@@ -12,6 +12,9 @@ export const calculateNumbers = (num1, num2, op) => {
     // division
   } else if (op === '/') {
     total = num1 / num2
+    if (total === Infinity) {
+      total = 'Error'
+    }
   }
   return total
 }

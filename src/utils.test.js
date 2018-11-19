@@ -60,6 +60,9 @@ describe('calculateNumbers will calculate the numbers that are passed into it', 
   test('calculateNumbers will divide the two numbers passed into it and return a decimal', () => {
     expect(calculateNumbers(divide.divide3, divide.divide2, divide.op)).toEqual(0.5)
   })
+  test('calculateNumbers will divide a number by 0 and return an Error', () => {
+    expect(calculateNumbers(divide.divide3, 0, divide.op)).toEqual('Error')
+  })
 })
 
 describe('displayNumbers will return the correct number that is passed into it', () => {
